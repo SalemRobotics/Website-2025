@@ -1,58 +1,117 @@
 <script setup lang="ts">
-import { setPage } from './util/page'
-import MainPage from './pages/MainPage.vue'
-import CommunityPage from './pages/CommunityPage.vue'
+import { setPage } from '@/util/page'
+import MainPage from '@/pages/MainPage.vue'
+import CommunityPage from '@/pages/CommunityPage.vue'
+import HistoryPage from '@/pages/HistoryPage.vue'
+import SponsorsPage from '@/pages/SponsorsPage.vue'
+import ContactUsPage from '@/pages/ContactUsPage.vue'
 </script>
 
 <template>
-  <header class="heading">
-    <h1>
-      <a class="title" href="#" @click.prevent="setPage(MainPage)">Salem Robotics</a>
-    </h1>
-    <div class="links">
-      <!-- href="#" redirects to the top of the current page, and @click.prevent="..." changes the tab -->
-      <a href="#" @click.prevent="setPage(CommunityPage)"><h3 class="page_link">Community</h3></a>
-      <!-- TODO: add more links -->
-      <h3 class="page_link">News</h3>
-      <h3 class="page_link">History</h3>
-      <h3 class="page_link">Sponsors</h3>
-      <h3 class="page_link" style="padding-right: 30px">Contact Us</h3>
-    </div>
+  <header id="heading" class="flex items-center rounded-2xl text-white">
+    <p
+      id="heading_title"
+      class="p-0 pl-7 border-0 bg-none w-fit font-bold hover_blue min-w-fit text-xl sm:text-2xl md:text-4xl py-5"
+      @click.prevent="setPage(MainPage)"
+    >
+      Salem Robotics
+    </p>
+    <ul id="heading_links" class="flex h-full list-none">
+      <li>
+        <button
+          class="page_link text-xs sm:text-sm md:text-base lg:text-xl"
+          @click="setPage(CommunityPage)"
+        >
+          Community
+        </button>
+      </li>
+      <li>
+        <button
+          class="page_link text-xs sm:text-sm md:text-base lg:text-xl"
+          @click="setPage(HistoryPage)"
+        >
+          History
+        </button>
+      </li>
+      <li>
+        <button
+          class="page_link text-xs sm:text-sm md:text-base lg:text-xl"
+          @click="setPage(SponsorsPage)"
+        >
+          Sponsors
+        </button>
+      </li>
+      <li>
+        <button
+          id="last_link"
+          class="page_link text-xs sm:text-sm md:text-base lg:text-xl"
+          @click="setPage(ContactUsPage)"
+        >
+          Contact Us
+        </button>
+      </li>
+    </ul>
   </header>
 </template>
 
 <style scoped>
-.heading {
-  display: flex;
-  width: 98%;
-  height: 100px;
-  align-items: center;
-  background-color: rgb(121 138 155);
-  border-radius: 20px;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  color: white;
-
-  h1 .title {
-    padding: 0;
-    padding-left: 30px;
-    border: none;
-    background: none;
-    width: 30%;
-    color: white;
-    font-weight: bold;
+@media (width >= 40rem) {
+  #heading {
+    width: 98vw;
   }
-  .links {
+}
+@media (width < 40rem) {
+  #heading {
+    width: 100vw;
+  }
+}
+#heading {
+  height: 6.5vw;
+  min-height: fit-content;
+  background-color: rgb(121, 138, 155);
+  margin: 0;
+  padding: 0;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+
+  #heading_title {
+    width: 30%;
+  }
+  #heading_links {
     width: 70%;
-    display: flex;
-    height: 100%;
     align-items: center;
     justify-content: right;
+
     .page_link {
-      font-weight: bold;
-      padding-left: 30px;
+      font-weight: 600;
+      background: none;
+      border: none;
       color: white;
+      padding: 0;
+      margin: 0;
+      margin-left: 3vw;
+      height: fit-content;
+
+      transition:
+        transform 0.25s ease-in-out,
+        color 0.25s ease-in-out;
+    }
+    .page_link:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      color: rgba(0, 51, 160, 0.5);
+    }
+    #last_link {
+      margin-right: 2.5vw;
     }
   }
+}
+
+.hover_blue {
+  transition: color 0.2s ease-in-out;
+}
+.hover_blue:hover {
+  cursor: pointer;
+  color: rgba(0, 51, 160, 0.5);
 }
 </style>

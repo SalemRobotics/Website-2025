@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { setPage } from '../util/page'
+import { setPage } from '@/util/page'
 import MainPage from './MainPage.vue'
 </script>
 
 <template>
   <div class="container">
+    <br />
     <h1 class="warning">Woah there!</h1>
 
     <br />
@@ -16,7 +17,7 @@ import MainPage from './MainPage.vue'
     <br />
 
     <a class="ret_link" href="#" @click.prevent="setPage(MainPage)"
-      ><u>Go back to the home page</u></a
+      ><u>Return to the home page</u></a
     >
   </div>
 </template>
