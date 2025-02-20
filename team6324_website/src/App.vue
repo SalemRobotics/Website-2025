@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import PageFooter from './components/PageFooter.vue'
-import PageHeader from './components/PageHeader.vue'
-import { page } from './components/util/page'
+import PageHeader from '@/components/PageHeader.vue'
+import TeamCard from './components/TeamCard.vue'
+import PageFooter from '@/components/PageFooter.vue'
+import { page } from '@/util/page'
 </script>
 
 <template>
   <div class="display">
     <PageHeader />
+    <TeamCard />
 
     <component :is="page"></component>
 
