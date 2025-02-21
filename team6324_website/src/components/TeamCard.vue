@@ -1,23 +1,17 @@
 <script setup lang="ts">
-import { image } from '@/util/page'
+import { image, titleText, titles } from '@/util/page'
 </script>
 
 <template>
-  <section
-    id="top_card"
-    class="content-center rounded-md flex items-center justify-center relative"
-  >
-    <div
-      id="top_card_text"
-      class="block items-center content-center justify-center min-w-fit pr-15 hover:cursor-default"
-    >
-      <h1
-        id="title"
-        class="inline content-center items-center min-w-fit text-2xl sm:text-3xl md:text-5xl text-zinc-200 font-bold"
-      >
-        FRC Team 6324
+  <section id="top_card" class="content-center rounded-md flex items-center justify-center relative">
+    <div id="top_card_text"
+      class="block items-center content-center justify-center min-w-fit pr-15 hover:cursor-default">
+      <h1 id="title"
+        class="inline content-center items-center min-w-fit text-2xl sm:text-3xl md:text-5xl text-zinc-200 font-bold">
+        {{ titleText }}
       </h1>
-      <p id="loc" class="flex justify-center w-full text-sm sm:text-base md:text-xl font-bold">
+      <p id="loc " class="flex justify-center w-full text-sm sm:text-base md:text-xl font-bold text-zinc-200"
+        v-if="titleText == titles.mainPage">
         Salem, NH
       </p>
     </div>

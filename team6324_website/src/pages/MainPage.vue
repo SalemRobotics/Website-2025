@@ -18,15 +18,10 @@
     <div class="game_vid">
       <h2 class="description text-2xl">This Year's Game Video</h2>
       <br />
-      <iframe
-        v-cloak
-        class="video"
-        src="https://www.youtube.com/embed/YWbxcjlY9JY"
-        title="YouTube video player"
+      <iframe v-cloak class="video" src="https://www.youtube.com/embed/YWbxcjlY9JY" title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-      ></iframe>
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
   </section>
 
@@ -46,13 +41,8 @@
           program has grown to include millions of participants from over 30 countries across four
           levels of competition. For more information about the program, or if you would like to
           start a team, please visit their website
-          <a
-            class="p-0 m-0"
-            href="https://firstinspires.org"
-            target="_blank"
-            rel="external noreferrer noopener"
-            >here</a
-          >.
+          <a class="p-0 m-0" href="https://firstinspires.org" target="_blank"
+            rel="external noreferrer noopener">here</a>.
         </p>
       </article>
     </section>
@@ -60,15 +50,9 @@
       <h2 class="text-2xl pl-5">Upcoming Events:</h2>
       <br />
       <!-- 4:3 ratio width:height -->
-      <iframe
-        v-cloak
-        width="800"
-        height="600"
+      <iframe v-cloak width="800" height="600"
         src="https://calendar.google.com/calendar/embed?src=c_95071b16f98558952ca0c03edbbd37eea71408dacc57e33aa686dc0a16b219fc%40group.calendar.google.com&ctz=America%2FNew_York"
-        style="border: 0"
-        frameborder="0"
-        scrolling="no"
-      ></iframe>
+        style="border: 0" frameborder="0" scrolling="no"></iframe>
     </div>
   </section>
 </template>
@@ -94,12 +78,14 @@
       width: 38vw;
       height: 23vw;
     }
+
     .description {
       display: flex;
       justify-content: right;
     }
   }
 }
+
 .event_content {
   display: flex;
   padding: 40px;
@@ -112,6 +98,7 @@
     top: -2.5rem;
     width: fit-content;
     padding: 25px;
+
     .image {
       border-radius: 2.5px;
       display: block;
