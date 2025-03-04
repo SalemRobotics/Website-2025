@@ -6,21 +6,15 @@ import { page } from '@/util/page'
 </script>
 
 <template>
-  <div class="display">
+  <div class="display w-full justify-center items-center">
     <PageHeader />
-    <TeamCard />
 
-    <component :is="page"></component>
+    <main class="w-full">
+      <TeamCard />
+
+      <component :is="page"></component>
+    </main>
 
     <PageFooter />
   </div>
 </template>
-
-<style scoped>
-.display {
-  width: 100%;
-  height: 100%;
-  justify-items: center;
-  align-items: center;
-}
-</style>
