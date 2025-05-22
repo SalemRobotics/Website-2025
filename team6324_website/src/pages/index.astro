@@ -1,0 +1,58 @@
+---
+import "astro:components";
+
+import Layout from "../layouts/Layout.astro";
+
+import Navbar from "../components/Navbar.vue";
+import ScrollingBar from "../components/ScrollingBar.vue";
+import Image from "astro/components/Image.astro";
+import title_img from "../assets/dubs.png";
+---
+
+<Layout>
+  <link href="/dubs.png" rel="prefetch" />
+  <main class="w-full">
+    <div
+      id="titlecard"
+      class="flex bg-[#0033a0] w-full items-center justify-center align-middle"
+    >
+      <div class="block w-[35vw] mr-[1vw] align-middle">
+        <h1
+          class="text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold w-full text-center"
+        >
+          FRC Team 6324
+        </h1>
+        <hr class="w-[50%] m-auto my-[0.5vw]" />
+        <h3 class="text-sm md:text-lg lg:text-xl font-bold w-full text-center">
+          Salem, NH
+        </h3>
+      </div>
+      <div class="py-[0.5vw]">
+        <Image
+          loading="eager"
+          src={title_img}
+          width={1930}
+          height={1167}
+          fetchpriority="high"
+          class="w-fit h-[26vw] rounded-md"
+          alt="The Blue Devils winning the 2025 NE FIRST"
+        />
+      </div>
+    </div>
+    <ScrollingBar client:load />
+    <section
+      id="short-about-us"
+      class="pt-[5vh] w-full flex justify-center align-middle"
+    >
+      <div class="w-fit">
+        <h1 class="text-6xl times-new-roman w-full text-center">About us</h1>
+        <hr class="py-[2vh]" />
+        <p class="max-w-[45vw] text-xl text-center">
+          Salem High School came back into the world of FIRST<sup>&reg;</sup> Robotics
+          and FRC in September of 2016. Since then, our team has grown into a 39
+          students at the beginning of the 2025 season.
+        </p>
+      </div>
+    </section>
+  </main>
+</Layout>

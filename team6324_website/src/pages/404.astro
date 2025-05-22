@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+const formlink: string = "https://docs.google.com";
+---
+
+<Layout title="404: Not found">
+  <main class="flex w-full h-full justify-center items-center">
+    <div class="block h-fit w-fit">
+      <h1 class="text-7xl">404: Not Found</h1>
+      <br />
+
+      <noscript>
+        <p>Whoops! You've tried to access a page that doesn't exist.</p>
+      </noscript>
+
+      <span id="loc-text" class="w-full flex justify-center"></span>
+      <br />
+
+      <script is:inline>
+        let elem = document.getElementById("loc-text");
+        if (elem !== null) {
+          elem.textContent = `Whoops! "${document.location.href}" doesn't exist!`;
+        } else console.error("Didn't find location element 'loc-text'");
+      </script>
+
+      <div class="flex w-full justify-center">
+        <a href={formlink} class="pr-[2vw]">Report a broken link </a>
+        |
+        <a href="/" class="pl-[2vw]">Return to home page</a>
+      </div>
+    </div>
+  </main>
+</Layout>

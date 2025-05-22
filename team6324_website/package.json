@@ -1,38 +1,26 @@
 {
-  "name": "team6324_website",
-  "version": "0.0.1",
-  "private": true,
+  "name": "team6324-website",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix",
-    "format": "prettier --write src/"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/vue": "^5.0.10",
+    "astro": "^5.7.3",
+    "motion-v": "^1.0.0-beta.2",
+    "three": "^0.175.0",
+    "unplugin-vue-components": "^28.5.0",
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.0.6",
-    "@tailwindcss/vite": "^4.0.6",
-    "@tsconfig/node22": "^22.0.0",
-    "@types/node": "^22.13.1",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "@vue/eslint-config-prettier": "^10.1.0",
-    "@vue/eslint-config-typescript": "^14.3.0",
-    "@vue/tsconfig": "^0.7.0",
-    "eslint": "^9.18.0",
-    "eslint-plugin-vue": "^9.32.0",
-    "jiti": "^2.4.2",
-    "npm-run-all2": "^7.0.2",
-    "prettier": "^3.4.2",
-    "tailwindcss": "^4.0.6",
-    "typescript": "~5.7.3",
-    "vite": "^6.0.11",
-    "vite-plugin-vue-devtools": "^7.7.1",
-    "vue-tsc": "^2.2.0"
+    "@tailwindcss/vite": "^4.1.4",
+    "prettier": "3.5.3",
+    "prettier-plugin-astro": "0.14.1",
+    "tailwindcss": "^4.1.4",
+    "tailwindcss-animate": "^1.0.7"
   }
 }

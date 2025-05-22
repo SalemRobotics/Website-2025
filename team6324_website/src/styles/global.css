@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: Devil Bauer;
+  src: url("/devil_bauer.otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.devil-txt {
+  font-family: Devil Bauer, serif;
+}
+.times-new-roman {
+  font-family: Times New Roman, serif;
+}
+
+:root {
+  --light-bg: #fff;
+  --light-text: #303030;
+
+  --dark-bg: #181818;
+  --dark-text: #f0f0f0;
+
+  --bg: var(--light-bg);
+  --text: var(--light-text);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--dark-bg);
+    --text: var(--dark-text);
+  }
+}

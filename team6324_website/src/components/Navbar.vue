@@ -1,0 +1,172 @@
+<!-- We use a Vue component here for interactivity as an 'island' in the astro page -->
+<script setup lang="ts">
+</script>
+
+<template>
+  <header
+    id="heading"
+    class="flex items-center w-full h-[6.5vw] min-h-fit rounded-2xl text-[#fbfbfb] p-0 mx-0 mt-[0.5vw] mb-[0.75vw] bg-[#79849b]"
+  >
+    <nav class="flex items-center rounded-2xl w-full h-full m-0 p-0">
+      <a
+        href="/"
+        class="w-[30%] min-w-fit p-0 pl-[2vw] my-5 border-none bg-none text-xl sm:text-2xl md:text-3xl"
+      >
+        <h1 class="devil-txt">Salem Robotics</h1>
+      </a>
+      <ul
+        class="flex h-full w-[70%] items-center list-none justify-end mr-[2.5vw]"
+      >
+        <li>
+          <a href="/newsletter/list">
+            <h3
+              class="font-semibold m-0 p-0 h-fit text-xs sm:text-sm md:text-base lg:text-xl"
+            >
+              Newsletter
+            </h3>
+          </a>
+        </li>
+        <li class="ml-[3vw]">
+          <a href="/community">
+            <h3
+              class="font-semibold m-0 p-0 h-fit text-xs sm:text-sm md:text-base lg:text-xl"
+            >
+              Community
+            </h3>
+          </a>
+        </li>
+        <li class="dropdown ml-[3vw]">
+          <a href="/history">
+            <h3
+              class="font-semibold m-0 p-0 h-fit text-xs sm:text-sm md:text-base lg:text-xl"
+            >
+              History
+              <span class="dropdown-caret" aria-hidden="true"></span>
+            </h3>
+          </a>
+          <ul class="dropdown-cts rounded-sm">
+            <li class="rounded-t-sm"><a href="/history" aria-label="Our team's history">Team History</a></li>
+            <li class="rounded-b-sm">
+              <a href="/history/seasons" class="w-fit" aria-label="Record of our previous seasons">Previous Seasons</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown relative ml-[3vw] mr-[1.5vw]">
+          <a href="/about_us">
+            <h3
+              class="font-semibold m-0 p-0 h-fit text-xs sm:text-sm md:text-base lg:text-xl"
+            >
+              About Us
+              <span class="dropdown-caret" aria-hidden="true"></span>
+            </h3>
+          </a>
+          <ul class="dropdown-cts rounded-sm">
+            <li class="rounded-t-sm">
+              <a href="/about_us/subteams" aria-label="Our team's subteams">Subteams</a>
+            </li>
+            <li><a href="/about_us/sponsors" aria-label="Our sponsors">Sponsors</a></li>
+            <li class="rounded-b-sm">
+              <a href="/about_us/contact_us" aria-label="Contact us">Contact Us</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</template>
+
+<style scoped>
+@media (width >=40rem) {
+  #heading {
+    width: 98vw;
+  }
+}
+@media (width < 40rem) {
+  #heading {
+    width: 100vw;
+  }
+}
+
+.dropdown {
+  transform: translateY(0);
+  transition: transform 0.4s ease-in-out;
+}
+.dropdown-caret::before {
+  content: "▴";
+  display: inline-block;
+  font-size: 1.1em;
+  margin-left: 0.025vw;
+  transition: transform 0.4s ease-in-out;
+}
+
+.dropdown-cts {
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  min-width: fit-content;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -0.5vh);
+  font-weight: 450;
+
+  transition:
+    opacity 0.4s ease-in-out,
+    transform 0.4s ease-in-out,
+    visibility 0.4s ease-in-out;
+
+  border: 1px solid var(--bg);
+  li {
+    top: 0;
+    width: 100%;
+    min-width: fit-content;
+    white-space: nowrap;
+    margin: 0;
+    text-align: center;
+    border-bottom: 0.05rem solid var(--bg);
+    padding: 5px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  li:last-child {
+    border: none;
+  }
+
+  @media (prefers-color-scheme: light) {
+    background-color: var(--dark-bg);
+    li {
+      color: var(--dark-text);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--light-bg);
+    li {
+      color: var(--light-text);
+    }
+  }
+}
+.dropdown:hover,
+.dropdown:focus-within {
+  transform: translateY(-0.1vh);
+  .dropdown-caret::before {
+    transform: rotate(180deg);
+  }
+  .dropdown-cts {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    transition:
+      opacity 0.3s ease-in-out,
+      transform 0.3s ease-in-out,
+      visibility 0.3s ease-in-out;
+  }
+}
+
+.dropdown-cts li:hover {
+  @media (prefers-color-scheme: light) {
+    background-color: #1f1f1f;
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: #d3cfcf;
+  }
+}
+</style>

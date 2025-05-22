@@ -1,0 +1,33 @@
+---
+import Image from "astro/components/Image.astro";
+import img from "@/assets/dubs.png";
+---
+
+<section id="2025-season">
+  <div class="flex w-full mb-[5vh]">
+    <div class="mr-[5vw]">
+      <h1 class="text-4xl mb-[3vh] devil-txt font-semibold">
+        2025 - Reefscape
+      </h1>
+      <p>yap session!</p>
+    </div>
+
+    <Image
+      loading="eager"
+      src={img}
+      width={1930}
+      height={1167}
+      fetchpriority="high"
+      class="w-fit h-[26vw] rounded-md"
+      alt="The Blue Devils winning the 2025 NE FIRST"
+    />
+  </div>
+  <div class="flex w-full justify-center columns-2 gap-[5vw]">
+    <div>
+      <h1 class="text-3xl font-semibold">Achievements</h1>
+    </div>
+    <div class="">
+      <h1 class="text-3xl font-semibold">Awards</h1>
+    </div>
+  </div>
+</section>

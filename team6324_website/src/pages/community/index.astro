@@ -1,0 +1,45 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.vue";
+import RipplingText from "../../components/RipplingText.vue";
+---
+
+<Layout title="The Salem Robotics Community">
+  <Navbar />
+  <main>
+    <section class="text-7xl font-bold hidden">
+      <p class="inline">Making</p>
+      <RipplingText text="Waves" />
+      <p class="inline">In Our Community</p>
+    </section>
+    <section id="gsd" class="columns-2">
+      <div id="gsd-text">
+        Team 6324 is proud to host New England FIRST<sup>&reg;</sup>'s Granite
+        State District Event annually since 2019. This event typically takes
+        place on the first week of competition, and brings an average of 35
+        teams and over 1,000 students to Salem High School each year. As event
+        hosts, not only do our mentors serve on the planning committe, but our
+        students as well. Apart from that, students also help set up the playing
+        and practice fields, run the kitchen and concessions, and work the
+        machine shop in our own engineering lab.
+        <br />
+        Not only does this give valuable experience to our students, it is also an
+        amazing opportunity to allow other students at SHS to get volunteer hours
+        for clubs such JROTC, NHS and Key Club.
+      </div>
+      <div id="gsd-img">
+        <img
+          src="/gsd_devils_den.jpg"
+          alt="Volunteers at the Devi's Den at GSD"
+        />
+      </div>
+    </section>
+  </main>
+  <style>
+    #gsd-text {
+      column-width: 35vw;
+      height: fit-content;
+      column-span: none;
+    }
+  </style>
+</Layout>
