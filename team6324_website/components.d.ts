@@ -12,7 +12,8 @@ declare module 'vue' {
     Footer: typeof import('./src/components/Footer.vue')['default']
     ModelViewer: typeof import('./src/components/ModelViewer.vue')['default']
     MotionExample: typeof import('./src/components/MotionExample.vue')['default']
-    Navbar: typeof import('./src/components/Navbar.vue')['default']
+    Navbar: typeof import('./src/components/Navbar.astro')['default']
+    Preloads: typeof import('./src/components/Preloads.vue')['default']
     RipplingText: typeof import('./src/components/RipplingText.vue')['default']
     ScrollingBar: typeof import('./src/components/ScrollingBar.vue')['default']
   }

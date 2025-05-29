@@ -3,10 +3,10 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
-    "module": "esnext",
+    "module": "nodenext",
     "target": "es6",
     "moduleResolution": "nodenext",
-    "types": [],
+    "types": ["node"],
     "esModuleInterop": true,
     "jsx": "preserve",
     "baseUrl": ".",

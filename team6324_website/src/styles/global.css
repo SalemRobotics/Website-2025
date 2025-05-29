@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: Devil Bauer;
-  src: url("/devil_bauer.otf");
+  src: url(/devil_bauer.otf);
   font-weight: normal;
   font-style: normal;
   font-display: swap;

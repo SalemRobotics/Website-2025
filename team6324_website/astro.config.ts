@@ -9,6 +9,9 @@ import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
+  devToolbar: {
+    enabled: false,
+  },
   server: {
     host: true,
     port: 6324,
@@ -18,7 +21,10 @@ export default defineConfig({
     format: "file",
   },
   vite: {
-    build: { minify: "esbuild" },
+    build: {
+      minify: "esbuild",
+      target: "modules",
+    },
     plugins: [
       tailwindcss(),
       Components({

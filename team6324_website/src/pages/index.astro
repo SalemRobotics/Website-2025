@@ -3,22 +3,21 @@ import "astro:components";
 
 import Layout from "../layouts/Layout.astro";
 
-import Navbar from "../components/Navbar.vue";
-import ScrollingBar from "../components/ScrollingBar.vue";
-import Image from "astro/components/Image.astro";
-import title_img from "../assets/dubs.png";
+import { PreloadFile } from "../preload";
+import { Picture } from "astro:assets";
+import title_img from "@/assets/dubs.png";
+import hold_img from "@/assets/robot_hold.png";
 ---
 
 <Layout>
-  <link href="/dubs.png" rel="prefetch" />
   <main class="w-full">
     <div
       id="titlecard"
-      class="flex bg-[#0033a0] w-full items-center justify-center align-middle"
+      class="flex bg-[#0033a0] w-full items-center justify-center align-middle py-[0.5vh]"
     >
-      <div class="block w-[35vw] mr-[1vw] align-middle">
+      <div class="flex-shrink-0 block w-[35vw] min-w-fit pr-[1vw] md:pr-[2vw] xl:pr-[3vw] align-middle">
         <h1
-          class="text-xl sm:text-2xl md:text-4xl lg:text-6xl font-bold w-full text-center"
+          class="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold w-full text-center"
         >
           FRC Team 6324
         </h1>
@@ -27,24 +26,25 @@ import title_img from "../assets/dubs.png";
           Salem, NH
         </h3>
       </div>
-      <div class="py-[0.5vw]">
-        <Image
-          loading="eager"
+      <div class={`flex-shrink-0 max-w-[${title_img.width}]`}>
+        <!-- This picture uses different sizes as an optimization - -->
+        <Picture
           src={title_img}
-          width={1930}
-          height={1167}
+          alt="The Blue Devils winning the 2025 NE FIRST district championships"
+          loading="eager"
           fetchpriority="high"
-          class="w-fit h-[26vw] rounded-md"
-          alt="The Blue Devils winning the 2025 NE FIRST"
+          inferSize={false}
+          widths={[768, 1024, 1440, title_img.width]}
+          sizes={`(max-width: 480px) 768px, (max-width: 768px) 1024px, (max-width: 1024px) 1440px, ${title_img.width}px`}
+          formats={["avif", "webp", "png"]}
+          fallbackFormat="png"
+          class={`block h-auto rounded-md w-[240px] sm:w-[320px] md:w-[460px] lg:w-[560px] xl:w-[768px]`}
         />
       </div>
     </div>
-    <ScrollingBar client:load />
-    <section
-      id="short-about-us"
-      class="pt-[5vh] w-full flex justify-center align-middle"
-    >
-      <div class="w-fit">
+    <!--<ScrollingBar client:load />-->
+    <section class="pt-[5vh] w-full flex justify-center align-middle">
+      <div class="w-fit pr-[5vw]">
         <h1 class="text-6xl times-new-roman w-full text-center">About us</h1>
         <hr class="py-[2vh]" />
         <p class="max-w-[45vw] text-xl text-center">
@@ -53,6 +53,17 @@ import title_img from "../assets/dubs.png";
           students at the beginning of the 2025 season.
         </p>
       </div>
+      <Picture
+        src={hold_img}
+        alt="The 2025 team holding the robot above their heads"
+        loading="lazy"
+        fetchpriority="auto"
+        inferSize={true}
+        formats={["avif", "webp"]}
+        fallbackFormat="png"
+        class="h-[50vh] w-auto rounded-sm"
+        />
     </section>
+    <br/>
   </main>
 </Layout>

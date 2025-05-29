@@ -1,24 +1,40 @@
 ---
 import "@/styles/global.css";
-const { title = "FRC 6324" } = Astro.props;
-import NavBar from "@/components/Navbar.vue";
+const { title = "FRC 6324", preloads = [] } = Astro.props;
+import NavBar from "@/components/Navbar.astro";
+import Preloads from "@/components/Preloads.vue";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
     <title>{title}</title>
     <meta name="viewport" content="width=device-width" />
 
     <meta name="color-scheme" content="light dark" />
-    <link rel="icon" type="image/icon" href="/favicon.ico" />
+    <link rel="icon" as="image" type="image/icon" href="/favicon.ico" />
+    <link
+      rel="preload"
+      as="font"
+      type="font/otf"
+      href="/devil_bauer.otf"
+      crossorigin="anonymous"
+    />
+    <!-- TODO: Uncomment this when HTTPS works with the custom domain: -->
+    <!--<link rel="canonical" href="https://frc6324.com" />-->
+
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content="FRC Team 6324 - The Blue Devils" />
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; frame-ancestors 'none'; style-src 'self' 'unsafe-inline'" />
+
+    <Preloads files={preloads} />
   </head>
 
   <body class="justify-items-center">
-    <NavBar client:only />
-    <slot />
+    <NavBar role="banner" />
+    <slot role="main" />
   </body>
 
   <style>
