@@ -1,0 +1,75 @@
+---
+import { Picture } from 'astro:assets';
+import Layout from '@/layouts/Layout.astro';
+
+import header_pic from "@assets/main_page/dubs.png";
+import Schedule from "@/components/Schedule.astro";
+---
+
+<Layout title="Salem Robotics" description="" selected="" fetches={[
+	{ url: "https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap", rel: "stylesheet" }
+]}>
+    <div style="position: relative; width: 100%; height: fit-content;">
+        <Picture
+                src={header_pic}
+                formats={["avif", "webp", "png"]}
+                fallbackFormat="jpeg"
+                alt="The team after winning the New England District Championships"
+                inferSize={true}
+                layout="constrained"
+                loading="eager"
+                decoding="async"
+                id="header-img"/>
+        <h1 id="header-title" class="oswald-text">The Blue Devils</h1>
+    </div>
+	<div id="top-content">
+		<section id="about-us">
+			<h2 id="about-us-title" class="oswald-text">About Us</h2>
+			<p id="about-us-text" class="regular-text">
+				We are a high school <abbr>FRC</abbr> (<em>FIRST<sup>&reg;</sup></em> Robotics Competition) team based
+				in Salem, New Hampshire. Beginning with our rookie season in 2017, we've worked to create a welcoming
+				environment for anyone who wants to explore STEM. We value collaboration, gracious professionalism, and
+				extensive communication. Our primary mission is to prepare the members of our team for a career in STEM
+				by practicing our values as well as teaching them industry skills like SCRUM, graphic design, the Adobe
+				suite, software and web development, and manufacturing with the industrial machines in our lab.
+			</p>
+		</section>
+		<Schedule id="schedule" />
+	</div>
+    <style lang="css">
+        #header-img {
+            width: 100%;
+            height: auto;
+        }
+        #header-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            font-size: 3rem;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+        }
+
+		#top-content {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			width: 100%;
+		}
+
+		#about-us {
+			justify-content: center;
+			width: 60%;
+		}
+		#about-us > #about-us-title {
+			font-family: "Oswald", sans-serif;
+			font-size: 2.5rem;
+			padding-left: 5vw;
+		}
+		#about-us > #about-us-text {
+			font-family: SansSerif, sans-serif;
+			font-size: 1rem;
+		}
+    </style>
+</Layout>

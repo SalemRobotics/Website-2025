@@ -1,0 +1,21 @@
+{
+  "name": "frc6324-website",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/language-server": "^2.16.0",
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.15.9",
+    "astro-icon": "^1.1.5"
+  },
+  "devDependencies": {
+    "lightningcss": "^1.30.2",
+    "terser": "^5.44.1"
+  }
+}
