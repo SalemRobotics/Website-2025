@@ -24,12 +24,12 @@ function isSelected(page: string): string {
 <header id="navbar-header" role="banner" aria-label="Page Header">
     <nav id="navbar">
         <a href={isSelected("")} id="navbar-title">
-            <h1 class="devil-bauer">Salem Robotics</h1>
+            <h1 class="devil-bauer hover-blue">Salem Robotics</h1>
         </a>
         <ul id="navbar-links">
             <li>
                 <a href={isSelected("donate")}>
-                    <h3>Donate</h3>
+                    <h3 class="hover-blue">Donate</h3>
                 </a>
             </li>
         </ul>
@@ -37,34 +37,44 @@ function isSelected(page: string): string {
 </header>
 
 <style>
+    .hover-blue {
+        transition: color 0.4s ease-in-out;
+    }
+
+    .hover-blue:hover,
+    .hover-blue:focus-within {
+        color: var(--bd-color);
+    }
+
     #navbar-header {
         display: flex;
         align-items: center;
+        justify-content: center;
         width: 100vw;
         height: 6.5vw;
         min-height: fit-content;
-        border-radius: 1rem;
-        color: #fbfbfb;
         margin: 0.5vw 0 0.75vw 0;
-        padding: 0;
-        background-color: #79849b;
         font-family: "Arial", sans-serif;
-    }
-    
-    @media (min-width: 40rem) {
-        #navbar-header {
-            width: 98vw;
-        }
     }
 
     #navbar {
+        color: #fbfbfb;
+        border-radius: 1rem;
+        padding: 0;
+        background-color: #79849b;
         display: flex;
         align-items: center;
-        width: 100%;
+        width: 100vw;
         height: 100%;
         margin: 0;
         padding: 0;
         color: var(--dark-text);
+    }
+
+    @media (min-width: 40rem) {
+        #navbar {
+            width: 98vw;
+        }
     }
 
     #navbar-title {

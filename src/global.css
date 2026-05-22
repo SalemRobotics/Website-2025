@@ -24,7 +24,6 @@
     --text: var(--light-text);
 
     --bd-color: rgb(0, 51, 160);
-    --footer-color: rgb(108, 105, 105);
 }
 @media (prefers-color-scheme: dark) {
     :root {
@@ -42,7 +41,7 @@
     color: var(--text);
 }
 
-.regular-text {
-    font-family: SansSerif, sans-serif;
+.roboto-text {
+    font-family: "Roboto Light", sans-serif;
     color: var(--text);
 }

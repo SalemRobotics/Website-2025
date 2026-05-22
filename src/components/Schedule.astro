@@ -3,7 +3,7 @@
 
 <div id="schedule-container">
     <h2 id="schedule-header" class="oswald-text">Our Schedule</h2>
-    <ul id="schedule-days" class="regular-text">
+    <ul id="schedule-days" class="oswald-text">
         <li>Thursdays | 5PM - 8PM</li>
     </ul>
 
@@ -22,10 +22,6 @@
         const seasonStarts = new Date(year, 0, 10);
         const schoolStart = new Date(year, 7, 28);
         const schoolEnd = new Date(year, 5, 16);
-
-        console.log("Season starts: " + seasonStarts.toLocaleDateString());
-        console.log("School starts: " + schoolStart.toLocaleDateString());
-        console.log("School ends: " + schoolEnd.toLocaleDateString());
 
         if (date >= seasonStarts && date <= schoolEnd) {
             // winter/spring schedule
@@ -63,17 +59,21 @@
 
 <style lang="css">
     #schedule-container {
-        width: 25%;
+        min-width: fit-content;
         display: flex;
         flex-direction: column;
         align-content: space-around;
     }
+
     #schedule-header {
         font-size: 1.75rem;
+        font-weight: 600;
         width: 100%;
         text-align: center;
     }
+
     #schedule-days {
         font-size: 1.125rem;
+        font-weight: 600;
     }
 </style>

@@ -4,8 +4,6 @@ import { defineConfig } from 'astro/config';
 import sitemap from "@astrojs/sitemap";
 import { cpus } from "node:os";
 
-import icon from "astro-icon";
-
 export default defineConfig({
     prefetch: true,
     site: "https://frc6324.com",
@@ -32,5 +30,5 @@ export default defineConfig({
             }
         }
     },
-    integrations: [sitemap(), icon()]
+    integrations: [sitemap()]
 });
